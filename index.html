@@ -50,8 +50,8 @@
                         con palabras claras qué necesitas, cómo prepararte y qué esperar el día de tu donación.
                     </p>
                     <div class="hero__acciones">
-                        <a class="boton boton--primario" href="#datos">Conoce lo básico</a>
-                        <a class="boton boton--secundario" href="#importancia">¿Por qué es importante?</a>
+                        <a class="boton boton--primario" href="requisitos.html">Revisa los requisitos</a>
+                        <a class="boton boton--secundario" href="preguntas.html">Resuelve tus dudas</a>
                     </div>
                 </div>
 
@@ -63,8 +63,55 @@
             </div>
         </section>
 
+        <!-- Accesos a las páginas principales -->
+        <section class="seccion" id="empezar" aria-labelledby="empezar-titulo">
+            <div class="contenedor">
+                <h2 class="seccion__titulo" id="empezar-titulo">¿Por dónde empezar?</h2>
+                <p class="seccion__intro">
+                    Elige lo que necesitas saber. Todo está explicado paso a paso.
+                </p>
+
+                <ul class="accesos">
+                    <li class="acceso">
+                        <div class="marco-imagen acceso__imagen">
+                            <img src="img/voluntarios.jpg"
+                                 alt="Grupo de donantes sonrientes con vendaje en el brazo, acompañados por una enfermera en una sala de donación"
+                                 width="800" height="600" loading="lazy">
+                        </div>
+                        <div class="acceso__cuerpo">
+                            <h3 class="acceso__titulo">
+                                <a href="requisitos.html">Requisitos y proceso</a>
+                            </h3>
+                            <p>
+                                Quién puede donar, cómo es el proceso paso a paso, consejos para antes
+                                y después, y dónde acudir.
+                            </p>
+                            <span class="acceso__enlace" aria-hidden="true">Ver requisitos &rarr;</span>
+                        </div>
+                    </li>
+
+                    <li class="acceso">
+                        <div class="marco-imagen acceso__imagen">
+                            <img src="img/descanso.jpg"
+                                 alt="Hombre descansando en un sillón de donación mientras toma agua de una botella"
+                                 width="800" height="600" loading="lazy">
+                        </div>
+                        <div class="acceso__cuerpo">
+                            <h3 class="acceso__titulo">
+                                <a href="preguntas.html">Preguntas frecuentes</a>
+                            </h3>
+                            <p>
+                                Cuánto dura, si duele, qué comer antes, qué llevar y qué hacer después de donar.
+                            </p>
+                            <span class="acceso__enlace" aria-hidden="true">Ver preguntas &rarr;</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
         <!-- Importancia de donar -->
-        <section class="seccion" id="importancia" aria-labelledby="importancia-titulo">
+        <section class="seccion seccion--alterna" id="importancia" aria-labelledby="importancia-titulo">
             <div class="contenedor importancia">
                 <div class="marco-imagen importancia__imagen">
                     <img src="img/brazo-donante.jpg"
@@ -90,7 +137,7 @@
         </section>
 
         <!-- Datos rápidos -->
-        <section class="seccion seccion--alterna" id="datos" aria-labelledby="datos-titulo">
+        <section class="seccion" id="datos" aria-labelledby="datos-titulo">
             <div class="contenedor">
                 <h2 class="seccion__titulo" id="datos-titulo">Datos rápidos</h2>
                 <p class="seccion__intro">
@@ -146,6 +193,86 @@
                         </p>
                     </li>
                 </ul>
+            </div>
+        </section>
+
+        <!-- Resumen de requisitos y proceso -->
+        <section class="seccion seccion--alterna" id="resumen-requisitos" aria-labelledby="resumen-requisitos-titulo">
+            <div class="contenedor resumen">
+                <div>
+                    <h2 class="seccion__titulo" id="resumen-requisitos-titulo">Requisitos básicos</h2>
+                    <p class="seccion__intro">
+                        Antes de ir al banco de sangre, revisa que cumplas con estos puntos principales.
+                    </p>
+
+                    <ul class="lista-revision">
+                        <li>Tener entre 18 y 65 años.</li>
+                        <li>Pesar más de 50 kg.</li>
+                        <li>Llevar una identificación oficial vigente con fotografía.</li>
+                        <li>Tener mínimo 6 horas de ayuno, con una cena ligera la noche anterior.</li>
+                        <li>No haberte hecho tatuajes ni perforaciones en los últimos 12 meses.</li>
+                        <li>No haber tomado alcohol ni medicamentos en las últimas 12 horas.</li>
+                    </ul>
+
+                    <p class="nota-pequena">
+                        Hay más requisitos, por ejemplo sobre vacunas, cirugías y, en el caso de las mujeres,
+                        embarazo y lactancia.
+                    </p>
+
+                    <a class="boton boton--primario" href="requisitos.html">Ver todos los requisitos</a>
+                </div>
+
+                <div class="bloque-destacado">
+                    <h3 class="resumen__subtitulo">El proceso en 7 pasos</h3>
+                    <ol class="linea-tiempo linea-tiempo--compacta">
+                        <li class="linea-tiempo__paso"><span class="linea-tiempo__titulo">Registro con tu identificación</span></li>
+                        <li class="linea-tiempo__paso"><span class="linea-tiempo__titulo">Toma de signos vitales</span></li>
+                        <li class="linea-tiempo__paso"><span class="linea-tiempo__titulo">Muestra para análisis previo</span></li>
+                        <li class="linea-tiempo__paso"><span class="linea-tiempo__titulo">Valoración médica</span></li>
+                        <li class="linea-tiempo__paso"><span class="linea-tiempo__titulo">Donación de unos 450 mL</span></li>
+                        <li class="linea-tiempo__paso"><span class="linea-tiempo__titulo">Refrigerio</span></li>
+                        <li class="linea-tiempo__paso"><span class="linea-tiempo__titulo">Comprobante y plática informativa</span></li>
+                    </ol>
+                    <a class="enlace-flecha" href="requisitos.html#proceso">Ver el proceso completo <span aria-hidden="true">&rarr;</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resumen de preguntas frecuentes -->
+        <section class="seccion" id="resumen-preguntas" aria-labelledby="resumen-preguntas-titulo">
+            <div class="contenedor">
+                <h2 class="seccion__titulo" id="resumen-preguntas-titulo">Dudas comunes</h2>
+                <p class="seccion__intro">
+                    Algunas de las preguntas que más se hacen quienes van a donar por primera vez.
+                </p>
+
+                <ul class="tarjetas tarjetas--tres">
+                    <li class="tarjeta">
+                        <h3 class="tarjeta__titulo">¿Duele donar sangre?</h3>
+                        <p class="tarjeta__texto">
+                            Solo sentirás un piquete breve al colocar la aguja. Durante la donación la mayoría
+                            de las personas no siente molestias.
+                        </p>
+                    </li>
+
+                    <li class="tarjeta">
+                        <h3 class="tarjeta__titulo">¿Cada cuánto puedo donar?</h3>
+                        <p class="tarjeta__texto">
+                            Deben pasar al menos 8 semanas entre una donación de sangre total y la siguiente.
+                        </p>
+                    </li>
+
+                    <li class="tarjeta">
+                        <h3 class="tarjeta__titulo">¿Me puedo contagiar de algo?</h3>
+                        <p class="tarjeta__texto">
+                            No. Todo el material es estéril, nuevo y desechable.
+                        </p>
+                    </li>
+                </ul>
+
+                <div class="seccion__accion">
+                    <a class="boton boton--secundario" href="preguntas.html">Ver todas las preguntas</a>
+                </div>
             </div>
         </section>
     </main>

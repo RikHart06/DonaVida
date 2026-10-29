@@ -792,6 +792,124 @@ a:hover {
 }
 
 /* ==========================================================
+   Inicio: accesos y resúmenes
+   ========================================================== */
+.accesos {
+    display: grid;
+    gap: 1.5rem;
+    margin: 2rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Tarjeta completa clicable mediante el enlace del título */
+.acceso {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: var(--color-fondo);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-grande);
+    box-shadow: var(--sombra);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.acceso:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(43, 45, 49, 0.14);
+}
+
+.acceso:focus-within {
+    outline: 3px solid var(--color-primario);
+    outline-offset: 3px;
+}
+
+.acceso__imagen {
+    aspect-ratio: 16 / 9;
+    border-radius: 0;
+}
+
+.acceso__cuerpo {
+    padding: 1.5rem;
+}
+
+.acceso__titulo {
+    font-size: 1.25rem;
+}
+
+.acceso__titulo a {
+    color: var(--color-texto);
+    text-decoration: none;
+}
+
+/* El área clicable del enlace cubre toda la tarjeta */
+.acceso__titulo a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+
+.acceso__titulo a:focus-visible {
+    outline: none;
+}
+
+.acceso__cuerpo p {
+    color: var(--color-texto-suave);
+}
+
+.acceso__enlace {
+    font-weight: 600;
+    color: var(--color-primario-oscuro);
+}
+
+.resumen {
+    display: grid;
+    gap: 2rem;
+}
+
+.resumen .lista-revision {
+    margin: 1.5rem 0 1rem;
+}
+
+.resumen__subtitulo {
+    font-size: 1.25rem;
+}
+
+.nota-pequena {
+    font-size: 0.9375rem;
+    color: var(--color-texto-suave);
+}
+
+/* Línea de tiempo con solo títulos */
+.linea-tiempo--compacta {
+    margin: 1.25rem 0 1.5rem;
+}
+
+.linea-tiempo--compacta .linea-tiempo__paso {
+    padding-bottom: 0.9rem;
+}
+
+.linea-tiempo--compacta .linea-tiempo__titulo {
+    display: block;
+    font-weight: 600;
+}
+
+.enlace-flecha {
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.enlace-flecha:hover {
+    text-decoration: underline;
+}
+
+.seccion__accion {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* ==========================================================
    Escritorio
    ========================================================== */
 @media (min-width: 768px) {
@@ -858,6 +976,16 @@ a:hover {
         grid-column: 1 / -1;
         aspect-ratio: 16 / 7;
     }
+
+    .accesos {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .resumen {
+        grid-template-columns: 3fr 2fr;
+        gap: 3rem;
+        align-items: start;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -886,7 +1014,12 @@ a:hover {
     }
 
     .boton,
-    .acordeon__boton::after {
+    .acordeon__boton::after,
+    .acceso {
         transition: none;
+    }
+
+    .acceso:hover {
+        transform: none;
     }
 }
