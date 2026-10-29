@@ -36,6 +36,13 @@
         }
     });
 
+    // Cierra el menú al hacer clic fuera del encabezado
+    document.addEventListener('click', function (evento) {
+        if (boton.getAttribute('aria-expanded') === 'true' && !evento.target.closest('.encabezado')) {
+            cerrarMenu();
+        }
+    });
+
     // Cierra con la tecla Escape y regresa el foco al botón
     document.addEventListener('keydown', function (evento) {
         if (evento.key === 'Escape' && boton.getAttribute('aria-expanded') === 'true') {
