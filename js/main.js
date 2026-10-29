@@ -45,6 +45,29 @@
     });
 })();
 
+// Acordeón de preguntas frecuentes
+// Sin JS todas las respuestas quedan visibles; aquí se cierran y se vuelven interactivas
+(function () {
+    var botones = document.querySelectorAll('.acordeon__boton');
+
+    botones.forEach(function (boton) {
+        var panel = document.getElementById(boton.getAttribute('aria-controls'));
+
+        if (!panel) {
+            return;
+        }
+
+        boton.setAttribute('aria-expanded', 'false');
+        panel.hidden = true;
+
+        boton.addEventListener('click', function () {
+            var abierto = boton.getAttribute('aria-expanded') === 'true';
+            boton.setAttribute('aria-expanded', abierto ? 'false' : 'true');
+            panel.hidden = abierto;
+        });
+    });
+})();
+
 // Imágenes faltantes: las oculta para que se vea el fondo de respaldo
 (function () {
     var imagenes = document.querySelectorAll('.marco-imagen img');
