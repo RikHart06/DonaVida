@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Preguntas frecuentes sobre donar sangre | DonaVida</title>
+    <meta name="description" content="Respuestas a las dudas más comunes sobre la donación de sangre en México: duración, cantidad, qué llevar, qué comer y qué hacer después.">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Ícono de la pestaña embebido: evita una petición a /favicon.ico fuera de la subruta -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23c73e4a' d='M12 2.5c-.4 0-.8.2-1 .6C8.6 6.9 5 11.6 5 15a7 7 0 0 0 14 0c0-3.4-3.6-8.1-6-11.9-.2-.4-.6-.6-1-.6z'/%3E%3C/svg%3E">
+</head>
+<body>
+    <a class="saltar-contenido" href="#contenido">Saltar al contenido</a>
+
+    <!-- Encabezado con navegación principal -->
+    <header class="encabezado">
+        <div class="contenedor encabezado__barra">
+            <a class="logo" href="index.html" aria-label="DonaVida, ir al inicio">
+                <svg class="logo__icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M12 2.5c-.4 0-.8.2-1 .6C8.6 6.9 5 11.6 5 15a7 7 0 0 0 14 0c0-3.4-3.6-8.1-6-11.9-.2-.4-.6-.6-1-.6z"/>
+                </svg>
+                <span>Dona<span class="logo__acento">Vida</span></span>
+            </a>
+
+            <button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu-principal">
+                <svg class="menu-boton__icono" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+                    <path d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+                Menú
+            </button>
+
+            <nav class="navegacion" id="menu-principal" aria-label="Navegación principal">
+                <ul class="navegacion__lista">
+                    <li><a class="navegacion__enlace" href="index.html">Inicio</a></li>
+                    <li><a class="navegacion__enlace" href="requisitos.html">Requisitos</a></li>
+                    <li><a class="navegacion__enlace" href="preguntas.html" aria-current="page">Preguntas frecuentes</a></li>
+                    <li><a class="navegacion__enlace" href="quiz.html">Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="contenido" tabindex="-1">
+        <!-- Encabezado de la página -->
+        <section class="encabezado-pagina" aria-labelledby="pagina-titulo">
+            <div class="contenedor">
+                <h1 class="encabezado-pagina__titulo" id="pagina-titulo">Preguntas frecuentes</h1>
+                <p class="encabezado-pagina__texto">
+                    Es normal tener dudas antes de donar por primera vez. Aquí respondemos las más comunes.
+                </p>
+            </div>
+        </section>
+
+        <!-- Acordeón de preguntas -->
+        <section class="seccion" aria-label="Lista de preguntas frecuentes">
+            <div class="contenedor contenedor--angosto">
+                <div class="acordeon">
+                    <div class="acordeon__item">
+                        <h2 class="acordeon__encabezado">
+                            <button class="acordeon__boton" type="button" id="pregunta-1" aria-expanded="true" aria-controls="respuesta-1">
+                                ¿Cuánto dura la donación?
+                            </button>
+                        </h2>
+                        <div class="acordeon__panel" id="respuesta-1" role="region" aria-labelledby="pregunta-1">
+                            <p>
+                                Todo el proceso toma aproximadamente 3 horas: registro, toma de signos vitales,
+                                análisis previo, valoración médica, la donación y el refrigerio. La extracción
+                                de sangre en sí dura solo unos 10 a 15 minutos.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="acordeon__item">
+                        <h2 class="acordeon__encabezado">
+                            <button class="acordeon__boton" type="button" id="pregunta-2" aria-expanded="true" aria-controls="respuesta-2">
+                                ¿Cuánta sangre me sacan?
+                            </button>
+                        </h2>
+                        <div class="acordeon__panel" id="respuesta-2" role="region" aria-labelledby="pregunta-2">
+                            <p>
+                                Alrededor de 450 mL, una cantidad segura para una persona adulta sana que cumple
+                                los requisitos. Tu cuerpo repone el líquido en pocas horas, sobre todo si bebes
+                                suficiente agua.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="acordeon__item">
+                        <h2 class="acordeon__encabezado">
+                            <button class="acordeon__boton" type="button" id="pregunta-3" aria-expanded="true" aria-controls="respuesta-3">
+                                ¿Cada cuánto puedo donar?
+                            </button>
+                        </h2>
+                        <div class="acordeon__panel" id="respuesta-3" role="region" aria-labelledby="pregunta-3">
+                            <p>
+                                Deben pasar al menos 8 semanas entre una donación de sangre total y la siguiente.
+                                Si donas por aféresis, los tiempos son distintos: pregunta en tu banco de sangre.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="acordeon__item">
+                        <h2 class="acordeon__encabezado">
+                            <button class="acordeon__boton" type="button" id="pregunta-4" aria-expanded="true" aria-controls="respuesta-4">
+                                ¿Qué debo llevar?
+                            </button>
+                        </h2>
+                        <div class="acordeon__panel" id="respuesta-4" role="region" aria-labelledby="pregunta-4">
+                            <p>
+                                Una identificación oficial vigente con fotografía: INE, cédula profesional,
+                                cartilla militar, pasaporte o licencia de conducir. Te recomendamos ir con ropa
+                                cómoda y revisar antes si tu banco de sangre pide cita o algún documento adicional.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="acordeon__item">
+                        <h2 class="acordeon__encabezado">
+                            <button class="acordeon__boton" type="button" id="pregunta-5" aria-expanded="true" aria-controls="respuesta-5">
+                                ¿Qué puedo comer antes de donar?
+                            </button>
+                        </h2>
+                        <div class="acordeon__panel" id="respuesta-5" role="region" aria-labelledby="pregunta-5">
+                            <p>
+                                Necesitas un ayuno mínimo de 6 horas. La noche anterior cena algo ligero y sin
+                                grasas, como fruta, verduras, pan tostado o gelatina. Evita frituras, lácteos,
+                                embutidos y carnes grasosas, porque pueden afectar la calidad de tu muestra.
+                                Puedes tomar agua.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="acordeon__item">
+                        <h2 class="acordeon__encabezado">
+                            <button class="acordeon__boton" type="button" id="pregunta-6" aria-expanded="true" aria-controls="respuesta-6">
+                                ¿Qué hago después de donar?
+                            </button>
+                        </h2>
+                        <div class="acordeon__panel" id="respuesta-6" role="region" aria-labelledby="pregunta-6">
+                            <p>
+                                Tómate el refrigerio, bebe muchos líquidos y deja el vendaje unas horas. Ese día
+                                evita cargar cosas pesadas con el brazo de la donación y no hagas ejercicio intenso.
+                                Si te sientes mareado, recuéstate y eleva las piernas.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="acordeon__item">
+                        <h2 class="acordeon__encabezado">
+                            <button class="acordeon__boton" type="button" id="pregunta-7" aria-expanded="true" aria-controls="respuesta-7">
+                                ¿Duele donar sangre?
+                            </button>
+                        </h2>
+                        <div class="acordeon__panel" id="respuesta-7" role="region" aria-labelledby="pregunta-7">
+                            <p>
+                                Solo sentirás un piquete breve al momento de colocar la aguja, parecido al de un
+                                análisis de sangre. Durante la donación la mayoría de las personas no siente
+                                molestias.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="acordeon__item">
+                        <h2 class="acordeon__encabezado">
+                            <button class="acordeon__boton" type="button" id="pregunta-8" aria-expanded="true" aria-controls="respuesta-8">
+                                ¿Me puedo contagiar de algo al donar?
+                            </button>
+                        </h2>
+                        <div class="acordeon__panel" id="respuesta-8" role="region" aria-labelledby="pregunta-8">
+                            <p>
+                                No. Todo el material que se usa es estéril, nuevo y desechable: se abre frente a ti
+                                y se desecha al terminar.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Llamado a revisar los requisitos -->
+                <div class="llamado">
+                    <h2 class="llamado__titulo">¿Ya sabes si cumples los requisitos?</h2>
+                    <p>Revisa la lista completa antes de ir al banco de sangre.</p>
+                    <a class="boton boton--primario" href="requisitos.html">Ver requisitos</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página con fuentes -->
+    <footer class="pie">
+        <div class="contenedor">
+            <h2 class="pie__titulo">Fuentes</h2>
+            <ul class="pie__fuentes">
+                <li>
+                    <a href="https://dof.gob.mx/nota_detalle.php?codigo=5275587" target="_blank" rel="noopener noreferrer">
+                        Norma Oficial Mexicana NOM-253-SSA1-2012
+                        <span class="solo-lectores">(se abre en una pestaña nueva)</span>
+                    </a>
+                    (Diario Oficial de la Federación)
+                </li>
+                <li>
+                    <a href="https://www.gob.mx/cnts" target="_blank" rel="noopener noreferrer">
+                        Centro Nacional de la Transfusión Sanguínea
+                        <span class="solo-lectores">(se abre en una pestaña nueva)</span>
+                    </a>
+                    (gob.mx/cnts)
+                </li>
+            </ul>
+            <p class="pie__nota">
+                DonaVida es un proyecto con fines informativos y no sustituye la valoración del personal médico
+                de un banco de sangre.
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

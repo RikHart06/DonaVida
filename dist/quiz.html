@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>¿Puedes donar? Quiz orientativo | DonaVida</title>
+    <meta name="description" content="Responde unas preguntas rápidas y descubre si podrías ser apto para donar sangre en México. Quiz orientativo de DonaVida.">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Ícono de la pestaña embebido: evita una petición a /favicon.ico fuera de la subruta -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23c73e4a' d='M12 2.5c-.4 0-.8.2-1 .6C8.6 6.9 5 11.6 5 15a7 7 0 0 0 14 0c0-3.4-3.6-8.1-6-11.9-.2-.4-.6-.6-1-.6z'/%3E%3C/svg%3E">
+</head>
+<body>
+    <a class="saltar-contenido" href="#contenido">Saltar al contenido</a>
+
+    <!-- Encabezado con navegación principal -->
+    <header class="encabezado">
+        <div class="contenedor encabezado__barra">
+            <a class="logo" href="index.html" aria-label="DonaVida, ir al inicio">
+                <svg class="logo__icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M12 2.5c-.4 0-.8.2-1 .6C8.6 6.9 5 11.6 5 15a7 7 0 0 0 14 0c0-3.4-3.6-8.1-6-11.9-.2-.4-.6-.6-1-.6z"/>
+                </svg>
+                <span>Dona<span class="logo__acento">Vida</span></span>
+            </a>
+
+            <button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu-principal">
+                <svg class="menu-boton__icono" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+                    <path d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+                Menú
+            </button>
+
+            <nav class="navegacion" id="menu-principal" aria-label="Navegación principal">
+                <ul class="navegacion__lista">
+                    <li><a class="navegacion__enlace" href="index.html">Inicio</a></li>
+                    <li><a class="navegacion__enlace" href="requisitos.html">Requisitos</a></li>
+                    <li><a class="navegacion__enlace" href="preguntas.html">Preguntas frecuentes</a></li>
+                    <li><a class="navegacion__enlace" href="quiz.html" aria-current="page">Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="contenido" tabindex="-1">
+        <!-- Encabezado de la página -->
+        <section class="encabezado-pagina" aria-labelledby="pagina-titulo">
+            <div class="contenedor">
+                <h1 class="encabezado-pagina__titulo" id="pagina-titulo">¿Puedes donar sangre?</h1>
+                <p class="encabezado-pagina__texto">
+                    Responde unas preguntas rápidas y te diremos si podrías ser apto para donar.
+                    Tus respuestas no se guardan en ningún lado.
+                </p>
+            </div>
+        </section>
+
+        <section class="seccion" aria-label="Quiz">
+            <div class="contenedor contenedor--angosto">
+                <div class="quiz" id="quiz">
+                    <!-- Mensaje si el navegador no tiene JavaScript -->
+                    <noscript>
+                        <div class="aviso aviso--importante">
+                            <p>
+                                Para usar el quiz necesitas activar JavaScript. Mientras tanto, puedes revisar
+                                la <a href="requisitos.html">lista completa de requisitos</a>.
+                            </p>
+                        </div>
+                    </noscript>
+
+                    <!-- Preguntas (se llenan desde js/quiz.js) -->
+                    <div class="quiz__tarjeta" id="quiz-preguntas" hidden>
+                        <div class="quiz__progreso">
+                            <p class="quiz__contador" id="quiz-contador">Pregunta 1 de 11</p>
+                            <div class="barra-progreso" id="quiz-barra" role="progressbar"
+                                 aria-labelledby="quiz-contador" aria-valuemin="0" aria-valuemax="11" aria-valuenow="1">
+                                <div class="barra-progreso__relleno" id="quiz-relleno"></div>
+                            </div>
+                        </div>
+
+                        <form class="quiz__formulario" id="quiz-formulario" novalidate>
+                            <fieldset class="quiz__pregunta">
+                                <legend class="quiz__texto" id="quiz-texto" tabindex="-1"></legend>
+                                <p class="quiz__ayuda" id="quiz-ayuda"></p>
+                                <div class="quiz__opciones" id="quiz-opciones"></div>
+                            </fieldset>
+
+                            <p class="quiz__error" id="quiz-error" role="alert" hidden>
+                                Elige una respuesta para continuar.
+                            </p>
+
+                            <div class="quiz__navegacion">
+                                <button class="boton boton--secundario" type="button" id="quiz-anterior">Anterior</button>
+                                <button class="boton boton--primario" type="submit" id="quiz-siguiente">Siguiente</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Resultado -->
+                    <div class="quiz__tarjeta quiz__resultado" id="quiz-resultado" hidden>
+                        <div id="quiz-resultado-contenido"></div>
+
+                        <!-- Aviso obligatorio -->
+                        <div class="aviso aviso--importante" role="note">
+                            <p class="aviso__titulo">Importante</p>
+                            <p>
+                                Esta información es orientativa. Los requisitos pueden variar entre bancos de sangre
+                                y la decisión final la toma siempre el personal médico del banco de sangre el día de tu donación.
+                            </p>
+                        </div>
+
+                        <div class="quiz__navegacion">
+                            <button class="boton boton--primario" type="button" id="quiz-reiniciar">Volver a empezar</button>
+                            <a class="boton boton--secundario" href="requisitos.html">Ver requisitos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página con fuentes -->
+    <footer class="pie">
+        <div class="contenedor">
+            <h2 class="pie__titulo">Fuentes</h2>
+            <ul class="pie__fuentes">
+                <li>
+                    <a href="https://dof.gob.mx/nota_detalle.php?codigo=5275587" target="_blank" rel="noopener noreferrer">
+                        Norma Oficial Mexicana NOM-253-SSA1-2012
+                        <span class="solo-lectores">(se abre en una pestaña nueva)</span>
+                    </a>
+                    (Diario Oficial de la Federación)
+                </li>
+                <li>
+                    <a href="https://www.gob.mx/cnts" target="_blank" rel="noopener noreferrer">
+                        Centro Nacional de la Transfusión Sanguínea
+                        <span class="solo-lectores">(se abre en una pestaña nueva)</span>
+                    </a>
+                    (gob.mx/cnts)
+                </li>
+            </ul>
+            <p class="pie__nota">
+                DonaVida es un proyecto con fines informativos y no sustituye la valoración del personal médico
+                de un banco de sangre.
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/quiz.js"></script>
+</body>
+</html>
