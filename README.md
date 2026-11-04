@@ -64,3 +64,47 @@ Después abre `http://localhost:8000/` en tu navegador.
 **Opción 3: desde una subruta con Nginx**
 
 Copia la carpeta del proyecto dentro del directorio que sirve Nginx con el nombre `donavida` y abre `http://localhost/donavida/`.
+
+## Proceso de optimización, empaquetado y despliegue
+
+### 1. Optimización
+Para no modificar el código original, la versión optimizada se encuentra en la carpeta `dist/`.
+
+- **Imágenes:** se comprimieron con [Squoosh](https://squoosh.app) usando MozJPEG con calidad 75, y las de mayor tamaño se redimensionaron manteniendo su proporción. Pasaron de 594 KB a 312 KB (cerca de 47 % menos).
+- **CSS y JavaScript:** se minificaron con Node.js usando `clean-css-cli` y `terser`. Pasaron de 42 KB a 25 KB (cerca de 40 % menos).
+
+```
+npx clean-css-cli -o dist/css/styles.css css/styles.css
+npx terser js/main.js -c -m -o dist/js/main.js
+npx terser js/quiz.js -c -m -o dist/js/quiz.js
+```
+
+### 2. Empaquetado
+El contenido de `dist/` se comprimió en `donavida-v1.0.zip`, con los archivos directamente en la raíz para desplegarse sin moverlos.
+
+```
+Compress-Archive -Path dist\* -DestinationPath donavida-v1.0.zip
+```
+
+### 3. Despliegue con Nginx
+1. Se instaló Nginx 1.30.6 para Windows en `C:\nginx`.
+2. Se descomprimió el paquete en `C:\www\donavida`.
+3. Se agregó la siguiente configuración dentro del bloque `server` de `C:\nginx\conf\nginx.conf`:
+
+```nginx
+listen       80;
+server_name  localhost;
+
+location /donavida/ {
+    alias  C:/www/donavida/;
+    index  index.html;
+}
+
+location = /donavida {
+    return 301 /donavida/;
+}
+```
+
+4. Se validó con `nginx -t` y se recargó con `nginx -s reload`.
+
+La aplicación queda disponible en **http://localhost/donavida**
