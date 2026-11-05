@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pre-registro para donar sangre | DonaVida</title>
+    <meta name="description" content="Haz tu pre-registro para donar sangre en México. Elige un banco de sangre y la fecha que prefieres para tu visita.">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/preregistro.css">
+    <!-- Ícono de la pestaña embebido: evita una petición a /favicon.ico fuera de la subruta -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23c73e4a' d='M12 2.5c-.4 0-.8.2-1 .6C8.6 6.9 5 11.6 5 15a7 7 0 0 0 14 0c0-3.4-3.6-8.1-6-11.9-.2-.4-.6-.6-1-.6z'/%3E%3C/svg%3E">
+</head>
+<body>
+    <a class="saltar-contenido" href="#contenido">Saltar al contenido</a>
+
+    <!-- Encabezado con navegación principal -->
+    <header class="encabezado">
+        <div class="contenedor encabezado__barra">
+            <a class="logo" href="index.html" aria-label="DonaVida, ir al inicio">
+                <svg class="logo__icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M12 2.5c-.4 0-.8.2-1 .6C8.6 6.9 5 11.6 5 15a7 7 0 0 0 14 0c0-3.4-3.6-8.1-6-11.9-.2-.4-.6-.6-1-.6z"/>
+                </svg>
+                <span>Dona<span class="logo__acento">Vida</span></span>
+            </a>
+
+            <button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu-principal">
+                <svg class="menu-boton__icono" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+                    <path d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+                Menú
+            </button>
+
+            <nav class="navegacion" id="menu-principal" aria-label="Navegación principal">
+                <ul class="navegacion__lista">
+                    <li><a class="navegacion__enlace" href="index.html">Inicio</a></li>
+                    <li><a class="navegacion__enlace" href="requisitos.html">Requisitos</a></li>
+                    <li><a class="navegacion__enlace" href="preguntas.html">Preguntas frecuentes</a></li>
+                    <li><a class="navegacion__enlace" href="quiz.html">Quiz</a></li>
+                    <li><a class="navegacion__enlace" href="preregistro.html" aria-current="page">Pre-registro</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="contenido" tabindex="-1">
+        <!-- Encabezado de la página -->
+        <section class="encabezado-pagina" aria-labelledby="pagina-titulo">
+            <div class="contenedor">
+                <h1 class="encabezado-pagina__titulo" id="pagina-titulo">Pre-registro para donar</h1>
+                <p class="encabezado-pagina__texto">
+                    Déjanos tus datos, elige un banco de sangre y la fecha que prefieres para tu visita.
+                    Así el banco de sangre sabrá que planeas ir.
+                </p>
+                <div class="aviso" role="note">
+                    <p class="aviso__titulo">Antes de enviar</p>
+                    <p>
+                        El pre-registro no es una cita confirmada ni sustituye la valoración médica.
+                        El día de tu visita el personal del banco de sangre revisará si puedes donar.
+                        Si tienes dudas, <a href="quiz.html">haz el quiz</a> o revisa los <a href="requisitos.html">requisitos</a>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion" aria-labelledby="formulario-titulo">
+            <div class="contenedor contenedor--angosto">
+                <div class="formulario-tarjeta">
+                    <h2 class="formulario-tarjeta__titulo" id="formulario-titulo">Tus datos</h2>
+
+                    <!-- Mensaje si el navegador no tiene JavaScript -->
+                    <noscript>
+                        <div class="aviso aviso--importante">
+                            <p>Para enviar el pre-registro necesitas activar JavaScript en tu navegador.</p>
+                        </div>
+                    </noscript>
+
+                    <!-- Mensaje de éxito (lo muestra js/preregistro.js al guardar) -->
+                    <div class="mensaje-formulario mensaje-formulario--exito" id="mensaje-exito" role="status" tabindex="-1" hidden>
+                        <p class="mensaje-formulario__titulo">¡Pre-registro guardado!</p>
+                        <p id="mensaje-exito-texto"></p>
+                    </div>
+
+                    <!-- Mensaje de error general (sin conexión o error del servidor) -->
+                    <div class="mensaje-formulario mensaje-formulario--error" id="mensaje-error" role="alert" tabindex="-1" hidden>
+                        <p class="mensaje-formulario__titulo">No se pudo enviar el pre-registro</p>
+                        <p id="mensaje-error-texto"></p>
+                    </div>
+
+                    <!--
+                        novalidate desactiva los globos de error del navegador para mostrar
+                        nuestros propios mensajes debajo de cada campo. Los atributos
+                        required, maxlength, etc. se quedan porque ayudan a la accesibilidad.
+                    -->
+                    <form class="formulario" id="formulario-preregistro" novalidate>
+                        <p class="formulario__nota">Todos los campos son obligatorios.</p>
+
+                        <!-- Nombre -->
+                        <div class="campo">
+                            <label class="campo__etiqueta" for="nombre">Nombre completo</label>
+                            <input class="campo__control" type="text" id="nombre" name="nombre"
+                                   autocomplete="name" required minlength="3" maxlength="120"
+                                   aria-describedby="error-nombre">
+                            <p class="campo__error" id="error-nombre" hidden></p>
+                        </div>
+
+                        <!-- Correo -->
+                        <div class="campo">
+                            <label class="campo__etiqueta" for="correo">Correo electrónico</label>
+                            <input class="campo__control" type="email" id="correo" name="correo"
+                                   autocomplete="email" required maxlength="150"
+                                   aria-describedby="error-correo">
+                            <p class="campo__error" id="error-correo" hidden></p>
+                        </div>
+
+                        <!-- Teléfono -->
+                        <div class="campo">
+                            <label class="campo__etiqueta" for="telefono">Teléfono</label>
+                            <p class="campo__ayuda" id="ayuda-telefono">10 dígitos, sin espacios ni guiones. Por ejemplo 8112345678</p>
+                            <input class="campo__control campo__control--corto" type="tel" id="telefono" name="telefono"
+                                   autocomplete="tel-national" inputmode="numeric" required maxlength="10"
+                                   aria-describedby="ayuda-telefono error-telefono">
+                            <p class="campo__error" id="error-telefono" hidden></p>
+                        </div>
+
+                        <!-- Fecha preferida -->
+                        <div class="campo">
+                            <label class="campo__etiqueta" for="fecha_preferida">Fecha preferida para donar</label>
+                            <p class="campo__ayuda" id="ayuda-fecha">Puede ser hoy o cualquier día posterior.</p>
+                            <!-- El atributo min (fecha de hoy) lo agrega js/preregistro.js -->
+                            <input class="campo__control campo__control--corto" type="date" id="fecha_preferida" name="fecha_preferida"
+                                   required aria-describedby="ayuda-fecha error-fecha_preferida">
+                            <p class="campo__error" id="error-fecha_preferida" hidden></p>
+                        </div>
+
+                        <!-- Banco de sangre (las opciones se cargan desde api/bancos) -->
+                        <div class="campo">
+                            <label class="campo__etiqueta" for="banco_id">Banco de sangre</label>
+                            <select class="campo__control" id="banco_id" name="banco_id" required disabled
+                                    aria-describedby="error-banco_id">
+                                <option value="">Cargando bancos de sangre…</option>
+                            </select>
+                            <p class="campo__error" id="error-banco_id" hidden></p>
+                        </div>
+
+                        <!-- Aviso de Privacidad -->
+                        <div class="campo campo--casilla">
+                            <div class="casilla">
+                                <input class="casilla__control" type="checkbox" id="acepta_aviso" name="acepta_aviso"
+                                       required aria-describedby="error-acepta_aviso">
+                                <label class="casilla__etiqueta" for="acepta_aviso">
+                                    He leído y acepto el
+                                    <a href="aviso-privacidad.html" target="_blank" rel="noopener">Aviso de Privacidad<span class="solo-lectores"> (se abre en una pestaña nueva)</span></a>
+                                </label>
+                            </div>
+                            <p class="campo__error" id="error-acepta_aviso" hidden></p>
+                        </div>
+
+                        <div class="formulario__acciones">
+                            <button class="boton boton--primario boton--grande" type="submit" id="boton-enviar">Enviar pre-registro</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página con fuentes -->
+    <footer class="pie">
+        <div class="contenedor">
+            <h2 class="pie__titulo">Fuentes</h2>
+            <ul class="pie__fuentes">
+                <li>
+                    <a href="https://dof.gob.mx/nota_detalle.php?codigo=5275587" target="_blank" rel="noopener noreferrer">
+                        Norma Oficial Mexicana NOM-253-SSA1-2012
+                        <span class="solo-lectores">(se abre en una pestaña nueva)</span>
+                    </a>
+                    (Diario Oficial de la Federación)
+                </li>
+                <li>
+                    <a href="https://www.gob.mx/cnts" target="_blank" rel="noopener noreferrer">
+                        Centro Nacional de la Transfusión Sanguínea
+                        <span class="solo-lectores">(se abre en una pestaña nueva)</span>
+                    </a>
+                    (gob.mx/cnts)
+                </li>
+            </ul>
+            <p class="pie__nota">
+                DonaVida es un proyecto con fines informativos y no sustituye la valoración del personal médico
+                de un banco de sangre.
+            </p>
+            <ul class="pie__legal" aria-label="Información legal">
+                <li><a href="aviso-privacidad.html">Aviso de Privacidad</a></li>
+                <li><a href="terminos.html">Términos y Condiciones</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/preregistro.js"></script>
+</body>
+</html>
