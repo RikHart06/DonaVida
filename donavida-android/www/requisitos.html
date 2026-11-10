@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Requisitos para donar sangre | DonaVida</title>
+    <meta name="description" content="Requisitos para donar sangre en México, proceso de donación paso a paso, consejos para antes y después, y dónde acudir a donar.">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Ícono de la pestaña embebido: evita una petición a /favicon.ico fuera de la subruta -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23c73e4a' d='M12 2.5c-.4 0-.8.2-1 .6C8.6 6.9 5 11.6 5 15a7 7 0 0 0 14 0c0-3.4-3.6-8.1-6-11.9-.2-.4-.6-.6-1-.6z'/%3E%3C/svg%3E">
+</head>
+<body>
+    <a class="saltar-contenido" href="#contenido">Saltar al contenido</a>
+
+    <!-- Encabezado con navegación principal -->
+    <header class="encabezado">
+        <div class="contenedor encabezado__barra">
+            <a class="logo" href="index.html" aria-label="DonaVida, ir al inicio">
+                <svg class="logo__icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M12 2.5c-.4 0-.8.2-1 .6C8.6 6.9 5 11.6 5 15a7 7 0 0 0 14 0c0-3.4-3.6-8.1-6-11.9-.2-.4-.6-.6-1-.6z"/>
+                </svg>
+                <span>Dona<span class="logo__acento">Vida</span></span>
+            </a>
+
+            <button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu-principal">
+                <svg class="menu-boton__icono" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+                    <path d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+                Menú
+            </button>
+
+            <nav class="navegacion" id="menu-principal" aria-label="Navegación principal">
+                <ul class="navegacion__lista">
+                    <li><a class="navegacion__enlace" href="index.html">Inicio</a></li>
+                    <li><a class="navegacion__enlace" href="requisitos.html" aria-current="page">Requisitos</a></li>
+                    <li><a class="navegacion__enlace" href="preguntas.html">Preguntas frecuentes</a></li>
+                    <li><a class="navegacion__enlace" href="quiz.html">Quiz</a></li>
+                    <li><a class="navegacion__enlace" href="privacidad.html">Privacidad</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="contenido" tabindex="-1">
+        <!-- Encabezado de la página -->
+        <section class="encabezado-pagina" aria-labelledby="pagina-titulo">
+            <div class="contenedor">
+                <h1 class="encabezado-pagina__titulo" id="pagina-titulo">Requisitos para donar sangre</h1>
+                <p class="encabezado-pagina__texto">
+                    Revisa con calma esta lista antes de ir al banco de sangre. Si cumples con todo,
+                    es muy probable que puedas donar y ayudar a quien más lo necesita.
+                </p>
+
+                <!-- Aviso obligatorio -->
+                <div class="aviso aviso--importante" role="note">
+                    <p class="aviso__titulo">Importante</p>
+                    <p>
+                        Esta información es orientativa. Los requisitos pueden variar entre bancos de sangre
+                        y la decisión final la toma siempre el personal médico del banco de sangre el día de tu donación.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Requisitos generales -->
+        <section class="seccion" id="generales" aria-labelledby="generales-titulo">
+            <div class="contenedor">
+                <h2 class="seccion__titulo" id="generales-titulo">Requisitos generales</h2>
+                <p class="seccion__intro">
+                    Aplican para todas las personas que quieren donar sangre total.
+                </p>
+
+                <ul class="tarjetas tarjetas--tres">
+                    <li class="tarjeta">
+                        <svg class="tarjeta__icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M4 21a8 8 0 0 1 16 0"/>
+                        </svg>
+                        <h3 class="tarjeta__titulo">Tener entre 18 y 65 años</h3>
+                        <p class="tarjeta__texto">Debes ser mayor de edad y no rebasar los 65 años.</p>
+                    </li>
+
+                    <li class="tarjeta">
+                        <svg class="tarjeta__icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <rect x="3" y="5" width="18" height="14" rx="2"/>
+                            <circle cx="9" cy="11" r="2"/>
+                            <path d="M6 16c.5-1.5 1.7-2 3-2s2.5.5 3 2M14 10h4M14 13h3"/>
+                        </svg>
+                        <h3 class="tarjeta__titulo">Identificación oficial vigente</h3>
+                        <p class="tarjeta__texto">
+                            Con fotografía: INE, cédula profesional, cartilla militar, pasaporte o licencia de conducir.
+                        </p>
+                    </li>
+
+                    <li class="tarjeta">
+                        <svg class="tarjeta__icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <rect x="3" y="4" width="18" height="16" rx="3"/>
+                            <path d="M8 10a4 4 0 0 1 8 0M12 10l1.5-2"/>
+                        </svg>
+                        <h3 class="tarjeta__titulo">Pesar más de 50 kg</h3>
+                        <p class="tarjeta__texto">Así te aseguras de que la donación no afecte tu salud.</p>
+                    </li>
+
+                    <li class="tarjeta">
+                        <svg class="tarjeta__icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <circle cx="12" cy="12" r="9"/>
+                            <path d="M12 7v5l3 2"/>
+                        </svg>
+                        <h3 class="tarjeta__titulo">Mínimo 6 horas de ayuno</h3>
+                        <p class="tarjeta__texto">
+                            La noche anterior cena algo ligero y sin grasas.
+                        </p>
+                    </li>
+
+                    <li class="tarjeta">
+                        <svg class="tarjeta__icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M4 20l5-5M9 15l8-8 2 2-8 8zM15 5l4 4"/>
+                        </svg>
+                        <h3 class="tarjeta__titulo">Sin tatuajes ni perforaciones recientes</h3>
+                        <p class="tarjeta__texto">No haberte hecho ninguno en los últimos 12 meses.</p>
+                    </li>
+
+                    <li class="tarjeta">
+                        <svg class="tarjeta__icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <rect x="3" y="8.5" width="18" height="7" rx="3.5" transform="rotate(-45 12 12)"/>
+                            <path d="M9.5 9.5l5 5"/>
+                        </svg>
+                        <h3 class="tarjeta__titulo">Sin alcohol ni medicamentos</h3>
+                        <p class="tarjeta__texto">No haberlos tomado en las últimas 12 horas.</p>
+                    </li>
+
+                    <li class="tarjeta">
+                        <svg class="tarjeta__icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M18 3l3 3M16 5l3 3M17.5 6.5L8 16l-3 1 1-3 9.5-9.5M4 20l2-2M10 10l4 4"/>
+                        </svg>
+                        <h3 class="tarjeta__titulo">Sin vacunas recientes</h3>
+                        <p class="tarjeta__texto">No haber recibido ninguna vacuna en el último mes.</p>
+                    </li>
+
+                    <li class="tarjeta">
+                        <svg class="tarjeta__icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/>
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                        <h3 class="tarjeta__titulo">No tener hepatitis B o C</h3>
+                        <p class="tarjeta__texto">No ser portador de ninguno de estos virus.</p>
+                    </li>
+
+                    <li class="tarjeta">
+                        <svg class="tarjeta__icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <rect x="3" y="3" width="18" height="18" rx="4"/>
+                            <path d="M12 8v8M8 12h8"/>
+                        </svg>
+                        <h3 class="tarjeta__titulo">Sin procedimientos médicos recientes</h3>
+                        <ul class="tarjeta__lista">
+                            <li>Dentales en los últimos 7 días.</li>
+                            <li>Cirugía mayor en los últimos 6 meses.</li>
+                            <li>Transfusión en el último año.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Requisitos para mujeres -->
+        <section class="seccion seccion--alterna" id="mujeres" aria-labelledby="mujeres-titulo">
+            <div class="contenedor">
+                <div class="bloque-destacado">
+                    <h2 class="seccion__titulo" id="mujeres-titulo">Si eres mujer, además…</h2>
+                    <ul class="lista-revision">
+                        <li>No debes estar embarazada.</li>
+                        <li>No debes estar en periodo de lactancia.</li>
+                        <li>Deben haber pasado al menos 6 meses desde un parto, una cesárea o una pérdida del embarazo.</li>
+                    </ul>
+                </div>
+
+                <!-- Aviso de autoexclusión -->
+                <div class="aviso aviso--neutral" role="note" aria-labelledby="autoexclusion-titulo">
+                    <h3 class="aviso__titulo" id="autoexclusion-titulo">Autoexclusión: una decisión responsable</h3>
+                    <p>
+                        Si crees que tu sangre podría representar un riesgo para quien la reciba, por ejemplo por
+                        haber tenido prácticas sexuales de riesgo o por consumo de drogas, te invitamos a no donar.
+                    </p>
+                    <p>
+                        Es una decisión voluntaria y confidencial: no tienes que dar explicaciones y nadie te juzgará.
+                        Cuidar a quien recibe tu sangre también es una forma de ayudar.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proceso de donación -->
+        <section class="seccion" id="proceso" aria-labelledby="proceso-titulo">
+            <div class="contenedor proceso">
+                <div>
+                    <h2 class="seccion__titulo" id="proceso-titulo">¿Cómo es el proceso?</h2>
+                    <p class="seccion__intro">
+                        Desde que llegas hasta que te vas pasan alrededor de 3 horas. Esto es lo que ocurre paso a paso.
+                    </p>
+
+                    <ol class="linea-tiempo">
+                        <li class="linea-tiempo__paso">
+                            <h3 class="linea-tiempo__titulo">Registro</h3>
+                            <p>Presentas tu identificación oficial y llenas tus datos.</p>
+                        </li>
+                        <li class="linea-tiempo__paso">
+                            <h3 class="linea-tiempo__titulo">Signos vitales</h3>
+                            <p>Te toman peso, talla, presión arterial y temperatura.</p>
+                        </li>
+                        <li class="linea-tiempo__paso">
+                            <h3 class="linea-tiempo__titulo">Muestra de sangre</h3>
+                            <p>Se toma una pequeña muestra para un análisis previo.</p>
+                        </li>
+                        <li class="linea-tiempo__paso">
+                            <h3 class="linea-tiempo__titulo">Valoración médica</h3>
+                            <p>
+                                Un médico revisa tus resultados y tu historial, define si eres apto
+                                y en qué modalidad donarás: sangre total o aféresis.
+                            </p>
+                        </li>
+                        <li class="linea-tiempo__paso">
+                            <h3 class="linea-tiempo__titulo">Donación</h3>
+                            <p>Se extraen aproximadamente 450 mL de sangre.</p>
+                        </li>
+                        <li class="linea-tiempo__paso">
+                            <h3 class="linea-tiempo__titulo">Refrigerio</h3>
+                            <p>Te ofrecen algo de comer y beber para que te recuperes.</p>
+                        </li>
+                        <li class="linea-tiempo__paso">
+                            <h3 class="linea-tiempo__titulo">Comprobante y plática</h3>
+                            <p>Recibes tu comprobante de donación y una plática informativa.</p>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="marco-imagen proceso__imagen">
+                    <img src="img/laboratorio.jpg"
+                         alt="Mano con guante tomando un tubo de una gradilla con muestras de sangre en un laboratorio"
+                         width="800" height="1000" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Consejos de antes y después -->
+        <section class="seccion seccion--alterna" id="consejos" aria-labelledby="consejos-titulo">
+            <div class="contenedor">
+                <h2 class="seccion__titulo" id="consejos-titulo">Consejos para antes y después</h2>
+                <p class="seccion__intro">
+                    Pequeños detalles que hacen tu donación más cómoda.
+                </p>
+
+                <div class="consejos">
+                    <div class="consejos__columna">
+                        <h3 class="consejos__titulo">Antes de donar</h3>
+                        <ul class="lista-revision">
+                            <li>Duerme bien la noche anterior.</li>
+                            <li>Cena ligero y sin grasas: evita frituras, lácteos y embutidos.</li>
+                            <li>Respeta el ayuno mínimo de 6 horas. Puedes tomar agua.</li>
+                            <li>No tomes alcohol ni medicamentos en las 12 horas previas.</li>
+                            <li>Lleva tu identificación oficial vigente.</li>
+                            <li>Usa ropa cómoda, con mangas fáciles de subir.</li>
+                            <li>Reserva toda la mañana: el proceso dura cerca de 3 horas.</li>
+                        </ul>
+                    </div>
+
+                    <div class="consejos__columna">
+                        <h3 class="consejos__titulo">Después de donar</h3>
+                        <ul class="lista-revision">
+                            <li>Toma el refrigerio y bebe muchos líquidos durante el día.</li>
+                            <li>Deja el vendaje puesto unas horas.</li>
+                            <li>Evita cargar cosas pesadas con ese brazo y no hagas ejercicio intenso ese día.</li>
+                            <li>No fumes durante al menos una hora.</li>
+                            <li>Si te mareas, recuéstate y eleva las piernas.</li>
+                            <li>Si notas alguna molestia, comunícate con el banco de sangre.</li>
+                        </ul>
+                    </div>
+
+                    <div class="marco-imagen consejos__imagen">
+                        <img src="img/descanso.jpg"
+                             alt="Hombre descansando en un sillón de donación mientras toma agua de una botella"
+                             width="800" height="600" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ¿Dónde donar? -->
+        <section class="seccion" id="donde-donar" aria-labelledby="donde-titulo">
+            <div class="contenedor donde-donar">
+                <div class="marco-imagen donde-donar__imagen">
+                    <img src="img/voluntarios.jpg"
+                         alt="Grupo de donantes sonrientes con vendaje en el brazo, acompañados por una enfermera en una sala de donación"
+                         width="800" height="600" loading="lazy">
+                </div>
+
+                <div>
+                    <h2 class="seccion__titulo" id="donde-titulo">¿Dónde donar?</h2>
+                    <p>
+                        Puedes donar en cualquier banco de sangre autorizado. Antes de ir, consulta su horario
+                        y si necesitas hacer cita.
+                    </p>
+
+                    <!-- Directorio oficial -->
+                    <h3 class="donde-donar__subtitulo">Directorio oficial</h3>
+                    <ul class="enlaces-externos">
+                        <li>
+                            <a href="https://bancodesangre.imss.gob.mx/apopsbs-publico/login" target="_blank" rel="noopener noreferrer">
+                                <span>
+                                    Bancos de sangre del IMSS
+                                    <span class="enlaces-externos__nota">Encuentra un banco de sangre del IMSS en tu estado.</span>
+                                </span>
+                                <span class="solo-lectores">(se abre en una pestaña nueva)</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Ejemplos en la Ciudad de México -->
+                    <h3 class="donde-donar__subtitulo">Ejemplos en la Ciudad de México</h3>
+                    <ul class="enlaces-externos">
+                        <li>
+                            <a href="https://hgm.salud.gob.mx/interna/unidades/banco/banco.html" target="_blank" rel="noopener noreferrer">
+                                <span>
+                                    Banco de sangre del Hospital General de México
+                                    <span class="enlaces-externos__nota">Hospital público de la Secretaría de Salud.</span>
+                                </span>
+                                <span class="solo-lectores">(se abre en una pestaña nueva)</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.hespanol.com/Servicios/banco-de-sangre" target="_blank" rel="noopener noreferrer">
+                                <span>
+                                    Banco de sangre del Hospital Español
+                                    <span class="enlaces-externos__nota">Hospital privado.</span>
+                                </span>
+                                <span class="solo-lectores">(se abre en una pestaña nueva)</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="donde-donar__nota">
+                        Son solo ejemplos: hay bancos de sangre en todo el país. Busca el que te quede más cerca.
+                    </p>
+
+                    <!-- Otras formas de ayudar -->
+                    <h3 class="donde-donar__subtitulo">Otras formas de ayudar</h3>
+                    <ul class="enlaces-externos">
+                        <li>
+                            <a href="https://blooders.org/" target="_blank" rel="noopener noreferrer">
+                                <span>
+                                    Blooders
+                                    <span class="enlaces-externos__nota">
+                                        Plataforma independiente que conecta a donantes con pacientes que necesitan sangre.
+                                    </span>
+                                </span>
+                                <span class="solo-lectores">(se abre en una pestaña nueva)</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <p>
+                        También puedes buscar el <strong>Centro Estatal de la Transfusión Sanguínea</strong> de tu
+                        estado, que coordina los bancos de sangre de tu localidad.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aviso obligatorio al final de la página -->
+        <section class="seccion seccion--compacta" aria-label="Aviso">
+            <div class="contenedor">
+                <div class="aviso aviso--importante" role="note">
+                    <p class="aviso__titulo">Recuerda</p>
+                    <p>
+                        Esta información es orientativa. Los requisitos pueden variar entre bancos de sangre
+                        y la decisión final la toma siempre el personal médico del banco de sangre el día de tu donación.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página con fuentes -->
+    <footer class="pie">
+        <div class="contenedor">
+            <h2 class="pie__titulo">Fuentes</h2>
+            <ul class="pie__fuentes">
+                <li>
+                    <a href="https://dof.gob.mx/nota_detalle.php?codigo=5275587" target="_blank" rel="noopener noreferrer">
+                        Norma Oficial Mexicana NOM-253-SSA1-2012
+                        <span class="solo-lectores">(se abre en una pestaña nueva)</span>
+                    </a>
+                    (Diario Oficial de la Federación)
+                </li>
+                <li>
+                    <a href="https://www.gob.mx/cnts" target="_blank" rel="noopener noreferrer">
+                        Centro Nacional de la Transfusión Sanguínea
+                        <span class="solo-lectores">(se abre en una pestaña nueva)</span>
+                    </a>
+                    (gob.mx/cnts)
+                </li>
+            </ul>
+            <p class="pie__nota">
+                DonaVida es un proyecto con fines informativos y no sustituye la valoración del personal médico
+                de un banco de sangre.
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
