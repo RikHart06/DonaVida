@@ -1,0 +1,79 @@
+name: Build iOS DonaVida
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-ios:
+    runs-on: macos-26
+    defaults:
+      run:
+        working-directory: donavida-android
+
+    steps:
+      - name: Descargar el codigo del repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Sincronizar archivos web con el proyecto iOS
+        run: npx cap sync ios
+
+      - name: Version de Xcode y SDK
+        run: |
+          xcodebuild -version
+          xcodebuild -showsdks | grep -i ios
+
+      - name: Bundle Identifier del proyecto
+        run: |
+          xcodebuild -project ios/App/App.xcodeproj -scheme App -showBuildSettings \
+            | grep -E "PRODUCT_BUNDLE_IDENTIFIER|PRODUCT_NAME|MARKETING_VERSION|IPHONEOS_DEPLOYMENT_TARGET"
+
+      - name: Compilar para simulador
+        run: |
+          xcodebuild -project ios/App/App.xcodeproj -scheme App \
+            -configuration Debug -sdk iphonesimulator \
+            -destination 'generic/platform=iOS Simulator' \
+            -derivedDataPath build/sim build
+
+      - name: Ejecutar en simulador y tomar captura
+        run: |
+          DEVICE=$(xcrun simctl list devices available | grep -m1 "iPhone" | sed -E 's/.*\(([A-F0-9-]{36})\).*/\1/')
+          echo "Simulador: $(xcrun simctl list devices available | grep -m1 'iPhone')"
+          xcrun simctl boot "$DEVICE"
+          xcrun simctl bootstatus "$DEVICE" -b
+          xcrun simctl install "$DEVICE" build/sim/Build/Products/Debug-iphonesimulator/App.app
+          xcrun simctl launch "$DEVICE" mx.donavida.app
+          sleep 15
+          mkdir -p evidencias
+          xcrun simctl io "$DEVICE" screenshot evidencias/simulador-donavida.png
+
+      - name: Generar archivo de la app (Archive)
+        run: |
+          xcodebuild -project ios/App/App.xcodeproj -scheme App \
+            -configuration Release -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            -archivePath build/DonaVida.xcarchive archive \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=""
+
+      - name: Empaquetar archivo .ipa
+        run: |
+          mkdir -p build/ipa/Payload
+          cp -R build/DonaVida.xcarchive/Products/Applications/App.app build/ipa/Payload/
+          cd build/ipa && zip -qr ../../evidencias/DonaVida-unsigned.ipa Payload
+          cd ../..
+          ls -lh evidencias/
+          echo "Revision de firma (se espera que no tenga firma de distribucion):"
+          codesign -dv build/ipa/Payload/App.app 2>&1 || true
+
+      - name: Subir evidencias
+        uses: actions/upload-artifact@v4
+        with:
+          name: donavida-ios
+          path: donavida-android/evidencias/
